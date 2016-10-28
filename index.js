@@ -16,14 +16,14 @@ app.use(bodyParser.json())
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  response.render('react/index.html');
 });
 
 app.post('/mail',function(req,res){
-  
+
   mailparser.write(req.body.mail);
   mailparser.end();
   res.send("Done");
