@@ -1,7 +1,8 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var MailParser = require('mailparser').MailParser;
 var mailparser = new MailParser();
-var bodyParser = require('body-parser');
+// var ReactEngine = require('express-react-engine');
 
 var app = express();
 
@@ -15,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // views is directory for all template files
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/components');
 // app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
